@@ -39,4 +39,29 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:text="状态模式 测试" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_response1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:text="责任链模式 原理" />
+
+        <Button
+            android:id="@+id/btn_response2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:text="责任链模式 测试" />
+
+    </LinearLayout>
+
+
 </LinearLayout>
