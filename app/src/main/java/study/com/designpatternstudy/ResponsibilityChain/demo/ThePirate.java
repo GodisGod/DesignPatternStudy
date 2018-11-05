@@ -27,6 +27,11 @@ public abstract class ThePirate {
             Log.i("LHD", getHeroName() + "战斗力比较强，可以打败" + enemy.getEnemyName());
             fight(enemy);
         } else {
+            if (nextPirate == null) {
+                Log.i("LHD", "谁也打不过");
+                //任务没有被处理，这个时候是不纯的责任链
+                return;
+            }
             Log.i("LHD", getHeroName() + "打不过" + enemy.getEnemyName() + "，那就让" + nextPirate.getHeroName() + "打他");
             nextPirate.fightEnemy(enemy);
         }

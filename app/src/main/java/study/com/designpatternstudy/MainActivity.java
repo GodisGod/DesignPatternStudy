@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 ThePirate roger = new Roger();
                 //设置关系，路飞的老大是香克斯，香克斯的老大是海贼王罗杰
                 luffy.setNextPirate(shanks);
-                shanks.setNextPirate(roger);
+//                shanks.setNextPirate(roger);
 
                 //构建三个敌人
                 Enemy joker = new Joker();
