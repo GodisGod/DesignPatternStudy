@@ -30,6 +30,8 @@ import study.com.designpatternstudy.observe.Guanchazhe;
 import study.com.designpatternstudy.state.FightController;
 import study.com.designpatternstudy.strategy.BusStrategy;
 import study.com.designpatternstudy.strategy.CalculateStrategy;
+import study.com.designpatternstudy.template.Heroes;
+import study.com.designpatternstudy.template.Knight;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -122,12 +124,22 @@ public class MainActivity extends AppCompatActivity {
                 Enemy kingOfTheSea = new TheKingOfTheSea();
 
                 //让路飞去挨个揍敌人
-                Log.i("LHD","路飞的第一个敌人");
+                Log.i("LHD", "路飞的第一个敌人");
                 luffy.fightEnemy(joker);
-                Log.i("LHD","路飞的第二个敌人");
+                Log.i("LHD", "路飞的第二个敌人");
                 luffy.fightEnemy(kaiDuo);
-                Log.i("LHD","路飞的第三个敌人");
+                Log.i("LHD", "路飞的第三个敌人");
                 luffy.fightEnemy(kingOfTheSea);
+            }
+        });
+        findViewById(R.id.btn_template).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Heroes heroes = new Heroes();
+                heroes.play();
+                Log.i("LHD", "-----------------我开始玩另一个游戏啦-----------------");
+                Knight knight = new Knight();
+                knight.play();
             }
         });
     }

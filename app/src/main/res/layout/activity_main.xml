@@ -6,12 +6,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Hello World!" />
-
     <Button
         android:id="@+id/btn_create"
         android:layout_width="match_parent"
@@ -43,13 +37,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_response1"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:text="责任链模式 原理" />
 
@@ -57,11 +51,16 @@
             android:id="@+id/btn_response2"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:text="责任链模式 测试" />
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_template"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="模板方法模式 测试" />
 
 </LinearLayout>
