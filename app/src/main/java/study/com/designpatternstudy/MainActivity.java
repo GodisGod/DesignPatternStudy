@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import java.lang.reflect.Proxy;
+
 import study.com.designpatternstudy.ResponsibilityChain.AbstractHandler;
 import study.com.designpatternstudy.ResponsibilityChain.AbstractRequest;
 import study.com.designpatternstudy.ResponsibilityChain.Handler1;
@@ -27,6 +29,10 @@ import study.com.designpatternstudy.factory.Product;
 import study.com.designpatternstudy.factory.ProductB;
 import study.com.designpatternstudy.observe.Beiguanchazhe;
 import study.com.designpatternstudy.observe.Guanchazhe;
+import study.com.designpatternstudy.proxy.DaWang;
+import study.com.designpatternstudy.proxy.DynamicDaWang;
+import study.com.designpatternstudy.proxy.Louluo;
+import study.com.designpatternstudy.proxy.Tasks;
 import study.com.designpatternstudy.state.FightController;
 import study.com.designpatternstudy.strategy.BusStrategy;
 import study.com.designpatternstudy.strategy.CalculateStrategy;
@@ -142,6 +148,37 @@ public class MainActivity extends AppCompatActivity {
                 knight.play();
             }
         });
+
+        findViewById(R.id.btn_proxy1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //代理模式
+                //构造一个喽啰
+                Louluo louluo = new Louluo();
+                //喽啰加入大王麾下
+                DaWang daWang = new DaWang(louluo);
+                //巡山
+                daWang.PatrolTheMountain();
+            }
+        });
+
+        findViewById(R.id.btn_proxy2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //动态代理
+                //随机选一个喽啰
+                Tasks louluo = new Louluo();
+                //有很多喽啰的大王
+                DynamicDaWang proxy = new DynamicDaWang(louluo);
+                //获取喽啰的ClassLoader
+                ClassLoader loader = louluo.getClass().getClassLoader();
+                //需要执行的任务
+                Tasks tasks = (Tasks) Proxy.newProxyInstance(loader, new Class[]{Tasks.class}, proxy);
+                //大王发布命令
+                tasks.PatrolTheMountain();
+            }
+        });
+
     }
 
     private void initObserve() {
