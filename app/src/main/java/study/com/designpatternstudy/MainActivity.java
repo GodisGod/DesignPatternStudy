@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
                 BMW bmw = new BMW(carFactory);
                 bmw.operate();
                 //或者让法拉利车厂加工
-                Log.i("LHD","--------------法拉利车厂--------------");
+                Log.i("LHD","--------------  法拉利车厂 --------------");
                 Ferrari ferrari = new Ferrari(carFactory);
                 ferrari.operate();
             }
