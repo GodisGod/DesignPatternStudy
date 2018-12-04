@@ -24,6 +24,13 @@ import study.com.designpatternstudy.ResponsibilityChain.demo.Roger;
 import study.com.designpatternstudy.ResponsibilityChain.demo.Shanks;
 import study.com.designpatternstudy.ResponsibilityChain.demo.TheKingOfTheSea;
 import study.com.designpatternstudy.ResponsibilityChain.demo.ThePirate;
+import study.com.designpatternstudy.decorator.BMW;
+import study.com.designpatternstudy.decorator.CarFactory;
+import study.com.designpatternstudy.decorator.Ferrari;
+import study.com.designpatternstudy.decorator.sample.Component;
+import study.com.designpatternstudy.decorator.sample.ConcreteComponent;
+import study.com.designpatternstudy.decorator.sample.RealDecoratorA;
+import study.com.designpatternstudy.decorator.sample.RealDecoratorB;
 import study.com.designpatternstudy.factory.CreateProductFactory;
 import study.com.designpatternstudy.factory.Product;
 import study.com.designpatternstudy.factory.ProductB;
@@ -176,6 +183,34 @@ public class MainActivity extends AppCompatActivity {
                 Tasks tasks = (Tasks) Proxy.newProxyInstance(loader, new Class[]{Tasks.class}, proxy);
                 //大王发布命令
                 tasks.PatrolTheMountain();
+            }
+        });
+
+        findViewById(R.id.btn_decorator1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //构造需要被装饰的组件对象
+                Component component = new ConcreteComponent();
+                //构造装饰器A，调用装饰器A的方法装饰组件对象
+                RealDecoratorA realDecoratorA = new RealDecoratorA(component);
+                realDecoratorA.operate();
+                //构造装饰器B，调用装饰器B的方法装饰组件对象
+                RealDecoratorB realDecoratorB = new RealDecoratorB(component);
+                realDecoratorB.operate();
+            }
+        });
+        findViewById(R.id.btn_decorator2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //安装上汽车发动机了
+                CarFactory carFactory = new CarFactory();
+                //让宝马车厂加工
+                BMW bmw = new BMW(carFactory);
+                bmw.operate();
+                //或者让法拉利车厂加工
+                Log.i("LHD","--------------法拉利车厂--------------");
+                Ferrari ferrari = new Ferrari(carFactory);
+                ferrari.operate();
             }
         });
 
