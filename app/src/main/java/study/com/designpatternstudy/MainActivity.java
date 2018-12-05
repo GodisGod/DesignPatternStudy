@@ -24,6 +24,9 @@ import study.com.designpatternstudy.ResponsibilityChain.demo.Roger;
 import study.com.designpatternstudy.ResponsibilityChain.demo.Shanks;
 import study.com.designpatternstudy.ResponsibilityChain.demo.TheKingOfTheSea;
 import study.com.designpatternstudy.ResponsibilityChain.demo.ThePirate;
+import study.com.designpatternstudy.adapter.AppleJuice;
+import study.com.designpatternstudy.adapter.JuiceAdapter;
+import study.com.designpatternstudy.adapter.NewFruitJuiceAdapter;
 import study.com.designpatternstudy.decorator.BMW;
 import study.com.designpatternstudy.decorator.CarFactory;
 import study.com.designpatternstudy.decorator.Ferrari;
@@ -208,9 +211,23 @@ public class MainActivity extends AppCompatActivity {
                 BMW bmw = new BMW(carFactory);
                 bmw.operate();
                 //或者让法拉利车厂加工
-                Log.i("LHD","--------------  法拉利车厂 --------------");
+                Log.i("LHD", "--------------  法拉利车厂 --------------");
                 Ferrari ferrari = new Ferrari(carFactory);
                 ferrari.operate();
+            }
+        });
+
+        findViewById(R.id.btn_adapter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JuiceAdapter adapter = new JuiceAdapter();
+                String juice = adapter.getAppleJuice();
+                Log.i("LHD", "给我一杯" + juice);
+                Log.i("LHD", "----------------------------------");
+                AppleJuice appleJuice = new AppleJuice();
+                NewFruitJuiceAdapter newFruitJuiceAdapter = new NewFruitJuiceAdapter(appleJuice);
+                String newJuice = newFruitJuiceAdapter.getFruitJuice();
+                Log.i("LHD", "给我一杯" + newJuice);
             }
         });
 

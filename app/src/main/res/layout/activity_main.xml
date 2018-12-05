@@ -10,28 +10,28 @@
         android:id="@+id/btn_create"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="工厂模式 生产产品" />
 
     <Button
         android:id="@+id/btn_observe"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="观察者模式 测试" />
 
     <Button
         android:id="@+id/btn_strategy"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="策略模式 测试" />
 
     <Button
         android:id="@+id/btn_state"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="状态模式 测试" />
 
     <LinearLayout
@@ -60,7 +60,7 @@
         android:id="@+id/btn_template"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="模板方法模式 测试" />
 
     <LinearLayout
@@ -93,7 +93,7 @@
             android:id="@+id/btn_decorator1"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:text="装饰方法 框架测试" />
 
@@ -101,9 +101,15 @@
             android:id="@+id/btn_decorator2"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:text="装饰方法 测试" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="适配器模式 测试" />
 
 </LinearLayout>
