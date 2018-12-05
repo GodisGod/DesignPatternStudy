@@ -106,10 +106,24 @@
             android:text="装饰方法 测试" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_adapter"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="适配器模式 测试" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_adapter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="适配器模式 测试" />
+
+        <Button
+            android:id="@+id/btn_bridge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="桥接模式 测试" />
+    </LinearLayout>
 
 </LinearLayout>

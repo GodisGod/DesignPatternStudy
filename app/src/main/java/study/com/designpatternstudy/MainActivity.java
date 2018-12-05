@@ -27,6 +27,11 @@ import study.com.designpatternstudy.ResponsibilityChain.demo.ThePirate;
 import study.com.designpatternstudy.adapter.AppleJuice;
 import study.com.designpatternstudy.adapter.JuiceAdapter;
 import study.com.designpatternstudy.adapter.NewFruitJuiceAdapter;
+import study.com.designpatternstudy.bridge.LargeCoffee;
+import study.com.designpatternstudy.bridge.MiddleCoffee;
+import study.com.designpatternstudy.bridge.Ordinary;
+import study.com.designpatternstudy.bridge.SmallCoffee;
+import study.com.designpatternstudy.bridge.Sugar;
 import study.com.designpatternstudy.decorator.BMW;
 import study.com.designpatternstudy.decorator.CarFactory;
 import study.com.designpatternstudy.decorator.Ferrari;
@@ -228,6 +233,36 @@ public class MainActivity extends AppCompatActivity {
                 NewFruitJuiceAdapter newFruitJuiceAdapter = new NewFruitJuiceAdapter(appleJuice);
                 String newJuice = newFruitJuiceAdapter.getFruitJuice();
                 Log.i("LHD", "给我一杯" + newJuice);
+            }
+        });
+
+        findViewById(R.id.btn_bridge).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //准备佐料
+                //原味咖啡
+                Ordinary ordinary = new Ordinary();
+                //糖
+                Sugar sugar = new Sugar();
+                //准备包装
+                //大杯咖啡 原味
+                LargeCoffee largeCoffee = new LargeCoffee(ordinary);
+                largeCoffee.makeCoffee();
+                //大杯咖啡 加糖
+                LargeCoffee largeCoffeeSugar = new LargeCoffee(sugar);
+                largeCoffeeSugar.makeCoffee();
+                //小杯咖啡 原味
+                SmallCoffee smallCoffee = new SmallCoffee(ordinary);
+                smallCoffee.makeCoffee();
+                //小杯咖啡 加糖
+                SmallCoffee smallCoffeeSugar = new SmallCoffee(sugar);
+                smallCoffeeSugar.makeCoffee();
+                //中杯咖啡 原味
+                MiddleCoffee middleCoffee = new MiddleCoffee(ordinary);
+                middleCoffee.makeCoffee();
+                //中杯咖啡 加糖
+                MiddleCoffee middleCoffeeSugar = new MiddleCoffee(sugar);
+                middleCoffeeSugar.makeCoffee();
             }
         });
 
